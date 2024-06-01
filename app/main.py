@@ -43,9 +43,12 @@ def shop_trip() -> None:
         if customer.money >= min_price:
             print(f"{customer.name} rides to "
                   f"{cheapest_shop.name}\n")
+            home_location = customer.location
+            customer.location = cheapest_shop.location
             cheapest_shop.print_receipt(customer)
             print(f"{customer.name} rides home\n{customer.name} now has "
                   f"{round(customer.money - min_price, 2)} dollars\n")
+            customer.location = home_location
         else:
             print(f"{customer.name} doesn't have enough money "
                   f"to make a purchase in any shop")
