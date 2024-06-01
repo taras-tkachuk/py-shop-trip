@@ -22,9 +22,9 @@ class Shop:
 
     def print_receipt(self, customer: Customer) -> None:
         now = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        print(f"Date: {now}")
-        print(f"Thanks, {customer.name}, for your purchase!")
-        print("You have bought:")
+        print(f"Date: {now}\n"
+              f"Thanks, {customer.name}, for your purchase!\n"
+              "You have bought:")
         for product, amount in customer.product_cart.items():
             price = self.products[product] * amount
             print(

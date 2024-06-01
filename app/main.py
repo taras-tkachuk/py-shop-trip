@@ -15,10 +15,7 @@ def shop_trip() -> None:
             customer["product_cart"],
             customer["location"],
             customer["money"],
-            Car(
-                customer["car"]["brand"],
-                customer["car"]["fuel_consumption"]
-            )
+            Car(**customer["car"])
         )
         for customer in config["customers"]
     ]
